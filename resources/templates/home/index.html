@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1>HOME</h1>
+<a class="button" href="{{ url_for('employees_default') }}" rel="noopener noreferrer">Employees</a>
+<a class="button" href="{{ url_for('employees_count', count=20) }}" rel="noopener noreferrer">Employees with count</a>
+<a class="button" href="{{ url_for('employees_salaries_default') }}" rel="noopener noreferrer">Employees Salaries</a>
+<a class="button" href="{{ url_for('employees_salaries_count', count=20) }}" rel="noopener noreferrer">Employees Salaries with count</a>
+<a class="button" href="{{ url_for('employees_current_salaries_default') }}" rel="noopener noreferrer">Employees Current Salaries</a>
+<a class="button" href="{{ url_for('employees_current_salaries_count', count=20) }}" rel="noopener noreferrer">Employees Current Salaries with count</a>
+
+{% endblock %}

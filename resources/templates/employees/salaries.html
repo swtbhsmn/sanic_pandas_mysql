@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block main %}
+{{ super() }}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Hire Date</th>
+            <th>Salary</th>
+            <th>From Date</th>
+            <th>To Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in data.data.data %}
+        <tr>
+            <td>{{ employee.emp_no }}</td>
+            <td>{{ employee.first_name }} {{ employee.last_name }}</td>
+            <td>{{ employee.hire_date | date(date_format='iso', date_string_format = '%d %b, %Y') }}</td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.from_date | date(date_format='iso', date_string_format = '%d %b, %Y') }}</td>
+            <td>{{ employee.to_date | date(date_format='iso', date_string_format = '%d %b, %Y') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
